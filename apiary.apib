@@ -2462,10 +2462,10 @@ None.
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
-|PrePaymentDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Pre Payment Details</a></b> object|`object`||||
+|PrePaymentDetails|see <b><a href="/#reference/data-object-definitions/prepayment-details">Pre Payment Details</a></b> object|`object`||||
 |AlternateCurrencyDetails|see <b><a href="/#reference/data-object-definitions/alternate-currency-details">Alternate Currency Details</a></b> object|`object`||||
 |BankDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
-|CounterpartyDetails|see <b><a href="/#reference/data-object-definitions/counterparty-details">Counterparty Details</a></b> object|`object`|||Required|
+|CounterpartyDetails|/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
 
 <b>Response Data</b>
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -3522,21 +3522,6 @@ A multipurpose object used by several endpoints
 
 + Response 200 (application/json; charset=utf-8)
 + Attributes (ValuesInContractCcy)
-
-## Counterparty Details [/CounterpartyDetails]
-A multipurpose object used by several endpoints
-### CounterpartyDetails [GET]
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|AccountCode|Account Code|`string`|11||Required|
-|AccountLedgerType|Account Ledger Type|'string`|1|||
-|ExpenseCode|Expense Code|`string`|3|||
-|DepartmentCode|Department Code|`string`|4|||
-|AmountInDocumentCurrency|Amount In Document Currency|decimal||||
-
-+ Response 200 (application/json; charset=utf-8)
-+ Attributes (CounterpartyDetails)
 
 
 ## DocumentDetails [/DocumentDetails]
