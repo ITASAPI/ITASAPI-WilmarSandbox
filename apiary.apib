@@ -2248,6 +2248,42 @@ Data Objects and endpoints providing access to and creation of Futures and Optio
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 Response)
 
+## Physical Trade PrePayment Request [/Contract/{TradingEntity}/Physical/PhysicalTradePrePayRequest/{InstructionReference}]
+`GET` Details of a PrePayment request made against a physicals contract
+### Read Physical Trade PrePayment Request [GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|InstructionReference|Instruction Reference|`string`|10||Required. Unique Key|
+|ContractReference|Contract Reference|`string`|11|||
+|RequestDate|Request Date|`datetime`||||
+|ContractCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency List</a></b> endpoint|`object`||||
+|AmountInContractCurrency|Amount In Contract Currency|`decimal`||||
+|AlternateCurrency|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency List</a></b> endpoint|`object`||||
+|RateOfExchangeAgreed|Rate of Exchange Agreed|`decimal`||||
+|RateOfExchangeType|Rate of Exchange Type|`string`|1|||
+|PrePaymentPercentage|PrePaymentPercentage|`decimal`||||
+|Counterparty|Counterparty Code|`string`|10|||
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+    + InstructionReference (required, string, `XX123456`) ... Code for physical trade prepayment request to read.
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (PhysicalTradePrePayment)
+        + Response (200 SuccessResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 BadReadResponse)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
+
 ## Physical Trade Shipments List [/Contract/{TradingEntityId}/Physical/PhysicalTradeShipment/{Property}/{PropertyValue}]
 `GET` List of Logistics information for Physical Contracts.
 ### List Physical Trade Shipment [GET]
@@ -3911,6 +3947,10 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + CurrencyId: GBP (string)
 + CurrencyDescription: British Pound (string)
 
+## CurrencyAlternate (object)
++ CurrencyId: USD (string)
++ CurrencyDescription: `U.S. Dollar` (string)
+
 ## DeliveryInOrder (object)
 + ReleaseId: 12345 (number)
 + ExpedOrderDetails (ExpedCallOff)
@@ -4240,6 +4280,19 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + ContractTermCode: DEL (string)
 + ContractTermPortCode: LIV (string)
 + ShipmentStatusCode: D (string)
+
+## PhysicalTradePrePayment (object)
++ InstructionReference: XX123456 (string)
++ ContractReference: S01234.000 (string)
++ RequestDate: `2016-06-01T00:00:00Z` (string)
++ ContractCurrency (Currency)
++ AmountInContractCurrency: 650 (number)
++ AlternateCurrency (CurrencyAlternate)
++ RateOfExchangeAgreed: 3.5 (number)
++ RateOfExchangeType: M (string)
++ PrePaymentPercentage: 20 (number)
++ Counterparty (AccountHeaderC)
+
 
 ## PhysicalTradeShipment List (object)
 + ContractId: P00004.000 (string)
