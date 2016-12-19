@@ -3655,7 +3655,7 @@ A multipurpose object used by several endpoints.
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|OtherCurrencyCode|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`|||Required|
+|OtherCurrencyCode|Other Currency Code|`string`|3||Required|
 |AmountInOtherCurrency|Amount In Other Currency|'decimal|||Required|
 
 + Response 200 (application/json; charset=utf-8)
@@ -4336,7 +4336,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + TransactionAmountInDocumentCurrency: `-123.45` (required, number)
 
 ## OtherCcyDetails (object)
-+ OtherCurrencyCode (CurrencyAlternate)
++ OtherCurrencyCode: USD (string)
 + AmountInOtherCurrency: 650 (number)
 
 ## PackingType (object)
