@@ -2463,9 +2463,9 @@ None.
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
 |PrePaymentDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Pre Payment Details</a></b> object|`object`||||
-|AlternateCurrencyDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Alternate Currency Details</a></b> object|`object`||||
+|AlternateCurrencyDetails|see <b><a href="/#reference/data-object-definitions/alternate-currency-details">Alternate Currency Details</a></b> object|`object`||||
 |BankDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
-|CounterpartyDetails|see <b><a href="/#reference/data-object-definitions">Account Header</a></b> object|`object`|||Required|
+|CounterpartyDetails|see <b><a href="/#reference/data-object-definitions/counterparty-details">Counterparty Details</a></b> object|`object`|||Required|
 
 <b>Response Data</b>
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -3609,7 +3609,8 @@ A multipurpose object used by several endpoints
 
 ## PrePayment Details [/PrePaymentDetails]
 A multipurpose object used by several endpoints
-### PrePaymentDetails
+### PrePaymentDetails [GET]
+
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |InstructionReference|Instruction Reference|`string`|||Required|
