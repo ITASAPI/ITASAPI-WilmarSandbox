@@ -2575,6 +2575,45 @@ None.
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 Response)
 
+## ReceivableOnPrePayment [/Finance/{TradingEntityId}/Cash/ReceivableOnPrePay]
+`POST` Allows cash receipts to be created against a prepayment invoice sent to the counterparty
+### Create ReceivableOnPrePayment [POST]
+
+<b>Request Body</b>
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
+|PrePaymentDetails|see <b><a href="/#reference/data-object-definitions/prepayment-details">Pre Payment Details</a></b> object|`object`||||
+|AlternateCurrencyDetails|see <b><a href="/#reference/data-object-definitions/alternate-currency-details">Alternate Currency Details</a></b> object|`object`||||
+|BankDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
+|CounterpartyDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
+
+<b>Response Data</b>
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|CashDocRef|Cash Document Reference|`string`||||
+
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+
++ Request (application/json)
+    + Header
+
+            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
+
+    + Attributes (PayableOnPrePayment)
+
++ Response 201 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (CashDocRefResponse)
+        + Response (201 CreateResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
 # Group Inventory-Physicals-Order Scheduling
 Production Order scheduling services.
 
