@@ -2467,6 +2467,7 @@ None.
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
 |BankDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
+|CashCurrencyDetails|see <b><a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a></b> object|[array] of `object`|||Required|
 |TransactionsToMatch|see <b><a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a></b> object|[array] of `object`|||Required|
 |OtherCosts|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|[array] of `object`||||
 
@@ -2508,7 +2509,7 @@ None.
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
 |PrePaymentDetails|see <b><a href="/#reference/data-object-definitions/prepayment-details">Pre Payment Details</a></b> object|`object`||||
-|AlternateCurrencyDetails|see <b><a href="/#reference/data-object-definitions/alternate-currency-details">Alternate Currency Details</a></b> object|`object`||||
+|AlternateCurrencyDetails|see <b><a href="/#reference/data-object-definitions/alternate-currency-details">Other Currency Details</a></b> object|`object`||||
 |BankDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
 |CounterpartyDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
 
@@ -2628,7 +2629,7 @@ None.
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
 |PrePaymentDetails|see <b><a href="/#reference/data-object-definitions/prepayment-details">Pre Payment Details</a></b> object|`object`||||
-|AlternateCurrencyDetails|see <b><a href="/#reference/data-object-definitions/alternate-currency-details">Alternate Currency Details</a></b> object|`object`||||
+|AlternateCurrencyDetails|see <b><a href="/#reference/data-object-definitions/alternate-currency-details">Other Currency Details</a></b> object|`object`||||
 |BankDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
 |CounterpartyDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
 
@@ -3576,18 +3577,6 @@ A multipurpose object used by several endpoints.
 + Response 200 (application/json; charset=utf-8)
 + Attributes (Country)
 
-## Alternate Currency Details [/AlternateCurreencyDetails]
-A multipurpose object used by several endpoints. 
-### AlternateCurrencyDetails [GET]
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|OtherCurrencyCode|Other Currency Code|`string`|3||Required|
-|AmountInOtherCurrency|Amount In Other Currency|'decimal|||Required|
-
-+ Response 200 (application/json; charset=utf-8)
-+ Attributes (AlternateCcyDetails)
-
 
 ## Contract Currency [/ContractCurrency]
 A multipurpose object used by several endpoints
@@ -3657,6 +3646,18 @@ A multipurpose object used by several endpoints
 
 + Response 200 (application/json; charset=utf-8)
 + Attributes (OnAccountDetails)
+
+## Other Currency Details [/OtherCurrencyDetails]
+A multipurpose object used by several endpoints. 
+### OtherCurrencyDetails [GET]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|OtherCurrencyCode|see <b><a href="/#reference/global-reference-data/currency-list/list-currencies">Currency</a></b> endpoint|`object`|||Required|
+|AmountInOtherCurrency|Amount In Other Currency|'decimal|||Required|
+
++ Response 200 (application/json; charset=utf-8)
++ Attributes (OtherCcyDetails)
 
 ## PnL Currency [/PnLCurrency]
 A multipurpose object used by several endpoints
@@ -3862,10 +3863,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + ExpenseCode: CASHOUT (required, string)
 + DepartmentCode: BRL (required, string)
 + AmountInDocumentCurrency: `-4615.68` (required, number)
-
-## AlternateCcyDetails (object)
-+ OtherCurrencyCode: USD (string)
-+ AmountInOtherCurrency: 650 (number)
 
 ## CashDocRefResponse (object)
 + CashDocRef: abc123456 (string)
@@ -4335,6 +4332,10 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + TransactionKey: 00040444.P||GBP||20150832||20151003||14576460 (required, string)
 + DocumentReference: 3DIECHES.P (required, string)
 + TransactionAmountInDocumentCurrency: `-123.45` (required, number)
+
+## OtherCcyDetails (object)
++ OtherCurrencyCode (CurrencyAlternate)
++ AmountInOtherCurrency: 650 (number)
 
 ## PackingType (object)
 + PackingTypeId: 1050 (string)
