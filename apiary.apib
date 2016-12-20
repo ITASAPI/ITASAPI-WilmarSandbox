@@ -4488,9 +4488,13 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + DocumentReference: 6DIECHES.P (required, string)
 + TransactionAmountInDocumentCurrency: 123.45 (required, number)
 
+## OtherCcyDetails (object)
++ OtherCurrencyCode: USD (string)
++ AmountInOtherCurrency: `-3200` (number)
+
 ## OtherCcyPayDetails (object)
 + OtherCurrencyCode: USD (string)
-+ AmountInOtherCurrency: `-3200`(number)
++ AmountInOtherCurrency: `-3200` (number)
 
 ## OtherCcyRecDetails (object)
 + OtherCurrencyCode: USD (string)
@@ -4522,7 +4526,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 ## PayableReceivableOnAccount (object)
 + DocumentBody (required, DocumentDetails)
 + BankDetails (required, AccountPostingDetails)
-+ CashCurrencyDetails (OtherCcyPayDetails)
++ CashCurrencyDetails (OtherCcyDetails)
 + TransactionsToMatch (required, array [OnAccountDetails])
 + OtherCosts (array [AccountPostingDetails])
 
