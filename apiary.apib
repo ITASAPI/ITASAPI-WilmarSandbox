@@ -10,6 +10,7 @@ HOST: http://polls.apiblueprint.org/
 <li>Contract-Physical<strong> Read Physical Trade PrePayment Request</strong>: GET Details of a PrePayment Request made against a Physical Contract<a href="/#reference/contract-physical/physical-trade-prepayment-request"> Link</a></li>
 <li>Finance-Cash<strong> Create PayableOnPrePayment</strong>: POST Allows Cash Payments to be Created against a PrePayment Invoice Received from the Counterparty<a href="/#reference/finance-cash/payableonprepayment"> Link</a></li>
 <li>Finance-Cash<strong> Create ReceivableOnPrePayment</strong>: POST Allows Cash Receipts to be Created against a PrePayment Invoice sent to the Counterparty<a href="/#reference/finance-cash/receivableonprepayment"> Link</a></li>
+<li>Finance-Cash<strong> Create ReceivableOnPrePayment</strong>: POST Allows Cash Receipts to be Created against a PrePayment Invoice sent to the Counterparty<a href="/#reference/finance-cash/receivableonprepayment"> Link</a></li>
 </ul>
 
 ## Updated Endpoints
@@ -2375,7 +2376,7 @@ Data Objects and endpoints providing access to cash create, match and authorisat
 
 ## ApplyMatching [/Finance/{TradingEntityId}/Cash/ApplyMatching]
 `POST` Transactions to apply cash, invoice matching to.
-### ApplyMatching [POST]
+### Create ApplyMatching [POST]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
