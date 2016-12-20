@@ -10,7 +10,7 @@ HOST: http://polls.apiblueprint.org/
 <li>Contract-Physical<strong> Read Physical Trade PrePayment Request</strong>: GET Details of a PrePayment Request made against a Physical Contract<a href="/#reference/contract-physical/physical-trade-prepayment-request"> Link</a></li>
 <li>Finance-Cash<strong> Create PayableOnPrePayment</strong>: POST Allows Cash Payments to be Created against a PrePayment Invoice Received from the Counterparty<a href="/#reference/finance-cash/payableonprepayment"> Link</a></li>
 <li>Finance-Cash<strong> Create ReceivableOnPrePayment</strong>: POST Allows Cash Receipts to be Created against a PrePayment Invoice sent to the Counterparty<a href="/#reference/finance-cash/receivableonprepayment"> Link</a></li>
-<li>Finance-Cash<strong> Create ApplyMatching</strong>: POST Transactions to apply cash, invoice matching to<a href="/#reference/finance-cash/applymatching"> Link</a></li>
+<li>Finance-Cash<strong> Create ApplyMatching</strong>: PUT Transactions to apply cash, invoice matching to<a href="/#reference/finance-cash/applymatching"> Link</a></li>
 <li>Finance-Cash<strong> RemoveMatching</strong>: PUT Validates and removes all matched transactions using the match code on nominated document<a href="/#reference/finance-cash/removematching"> Link</a></li>
 <li>Finance-Cash<strong> ReverseCashDocument</strong>: PUT Validates and performs a full cash reverse on nominated document<a href="/#reference/finance-cash/reversecashdocument"> Link</a></li>
 </ul>
@@ -2377,8 +2377,8 @@ Data Objects and endpoints providing access to cash create, match and authorisat
 
 
 ## ApplyMatching [/Finance/{TradingEntityId}/Cash/ApplyMatching]
-`POST` Transactions to apply cash, invoice matching to.
-### Create ApplyMatching [POST]
+`PUT` Transactions to apply cash, invoice matching to.
+### ApplyMatching [PUT]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
@@ -2395,10 +2395,8 @@ Data Objects and endpoints providing access to cash create, match and authorisat
 
     + Attributes (ApplyMatching)
 
-+ Response 201 (application/json; charset=utf-8)
-    + Attributes 
-        + Data (CashDocRefResponse)
-        + Response (201 CreateResponse)
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (200 SuccessResponse)
 
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
