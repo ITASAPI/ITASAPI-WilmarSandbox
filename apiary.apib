@@ -2742,8 +2742,8 @@ None.
 
 
 ## ReverseCashDocument [/Finance/{TradingEntityId}/Cash/ReverseCashDocument/{DocumentReference}]
-`PUT` Validates and performs a full cash reverse on nominated document.
-### ReverseCashDocument [PUT]
+`POST` Validates and performs a full cash reverse on nominated document.
+### Create ReverseCashDocument [POST]
 
 <b>URI Parameters</b>
 
@@ -2772,11 +2772,10 @@ None.
 
 
 
-+ Response 200 (application/json; charset=utf-8)
++ Response 201 (application/json; charset=utf-8)
     + Attributes 
-        + Data
-            + DocumentReference: CP1515151 (string)
-        + Response (200 SuccessResponse)
+        + Data (CashReversal)
+        + Response (201 CreateResponse)
 
 + Response 400 (application/json; charset=utf-8)
     + Attributes (400 Response)
@@ -3995,6 +3994,9 @@ The CommodityFullCode is a five part key made up of the following values seperat
 
 ## CashDocRefResponse (object)
 + CashDocRef: abc123456 (string)
+
+## CashReversal (object)
++ CashReversal: CP6161616 (string)
 
 ## Charter (object)
 + CharterId: CHART01.000 (required, string)
