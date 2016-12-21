@@ -4008,7 +4008,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + AccountLedgerType: C (required, string)
 + ExpenseCode: CASHOUT (required, string)
 + DepartmentCode: BRL (required, string)
-+ AmountInDocumentCurrency: 0.01 (required, number)
++ AmountInDocumentCurrency: `-4615.68` (required, number)
 
 ## AccountPostingRecDetails (object)
 + AccountCode: AGUACHEM.P (required, string)
@@ -4763,7 +4763,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 
 ## ReceivableManual (object)
 + DocumentBody (required, DocumentDetails)
-+ AccountDetails (required, array [AccountPostingBankRecDetails])
++ AccountDetails (required, array [AccountPostingBankRecDetails, AccountPostingPayDetails])
 
 ## ReceivableOnAccount (object)
 + DocumentBody (required, DocumentDetails)
