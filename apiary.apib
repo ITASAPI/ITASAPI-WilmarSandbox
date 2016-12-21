@@ -4031,13 +4031,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + DepartmentCode: BRL (required, string)
 + AmountInDocumentCurrency: 4615.68 (required, number)
 
-## AccountPostingOthRecDetails (object)
-+ AccountCode: AGUACHEM.P (required, string)
-+ AccountLedgerType: C (required, string)
-+ ExpenseCode: CASHOUT (required, string)
-+ DepartmentCode: BRL (required, string)
-+ AmountInDocumentCurrency: `-0.01` (required, number)
-
 ## ApplyMatching (object)
 + TransactionsToMatch (required, array [OnAccountDetailsMatched, OnAccountDetailsMatches])
 
@@ -4586,13 +4579,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + CashCurrencyDetails (OtherCcyDetails)
 + TransactionsToMatch (required, array [OnAccountPayDetailsLess])
 + OtherCosts (array [AccountPostingPayDetailsLess])
-
-## PayableReceivableOnAccount (object)
-+ DocumentBody (required, DocumentDetails)
-+ BankDetails (required, AccountPostingBankRecDetails)
-+ CashCurrencyDetails (OtherCcyDetails)
-+ TransactionsToMatch (required, array [OnAccountDetails])
-+ OtherCosts (array [AccountPostingDetails])
 
 ## PaymentTerm (object)
 + PaymentTermId: ADV (required, string)
