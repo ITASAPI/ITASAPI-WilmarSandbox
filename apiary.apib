@@ -2697,15 +2697,15 @@ None.
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
 
-## RemoveMatching [/Finance/{TradingEntityId}/Cash/RemoveMatching/{DocumentReference}]
-`PUT` Validates and removes all matched transactions using the match code on nominated document
+## RemoveMatching [/Finance/{TradingEntityId}/Cash/RemoveMatching/{MatchFlag}]
+`PUT` Validates and removes all matched transactions using the nominated match flag.
 ### RemoveMatching [PUT]
 
 <b>URI Parameters</b>
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|DocumentReference|Document Reference|`string`|9||Required|
+|MatchFlag|Match Flag|`string`|3||Required|
 
 <b>Body Parameters</b>
 <br />
@@ -2713,7 +2713,7 @@ None.
 
 + Parameters
     + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
-    + DocumentReference (required, string, `CP1515151`)
+    + MatchFlag (required, string, `ABC`)
 
 + Request (application/json)
     + Header
@@ -2731,7 +2731,7 @@ None.
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
         + Data
-            + DocumentReference: CP1515151 (string)
+            + MatchFlag: ABC (string)
         + Response (200 SuccessResponse)
 
 + Response 400 (application/json; charset=utf-8)
