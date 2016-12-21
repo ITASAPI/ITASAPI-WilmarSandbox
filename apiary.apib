@@ -1668,9 +1668,9 @@ None.
     + Attributes (404 Response)
 
 
-## Transactions Matched [/Accounting/{TradingEntityId}/Matching/TransactionsMatched/{DocumentReference}]
-`GET` Transactions linked by match flag found on the document reference provided
-### Read Transactions Matched [GET]
+## Transactions Matched List [/Accounting/{TradingEntityId}/Matching/TransactionsMatched/{DocumentReference}]
+`GET` List Transactions linked by match flag found on the document reference provided
+### List Transactions Matched [GET]
 
 <b>URI Parameters</b>
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -1697,6 +1697,7 @@ None.
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
         + Data (array [TransactionsMatched])
+        + Pagination (Pagination)
         + Response (200 SuccessResponse)
 
 + Response 400 (application/json; charset=utf-8)
