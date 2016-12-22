@@ -2592,7 +2592,6 @@ None.
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
 |BankDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
-|CashCurrencyDetails|see <b><a href="/#reference/data-object-definitions/other-currency-details/othercurrencydetails">Other Currency Details</a></b> object|`object`||||
 |TransactionsToMatch|see <b><a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a></b> object|[array] of `object`|||Required|
 |OtherCosts|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|[array] of `object`||||
 
@@ -2634,7 +2633,6 @@ None.
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
 |PrePaymentDetails|see <b><a href="/#reference/data-object-definitions/prepayment-details">Pre Payment Details</a></b> object|`object`||||
-|AlternateCurrencyDetails|see <b><a href="/#reference/data-object-definitions/other-currency-details/othercurrencydetails">Other Currency Details</a></b> object|`object`|||Required|
 |BankDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
 |CounterpartyDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
 
@@ -2713,7 +2711,6 @@ None.
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
 |BankDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
-|CashCurrencyDetails|see <b><a href="/#reference/data-object-definitions/other-currency-details/othercurrencydetails">Other Currency Details</a></b> object|`object`||||
 |TransactionsToMatch|see <b><a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a></b> object|[array] of `object`|||Required|
 |OtherCosts|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|[array] of `object`||||
 
@@ -2755,7 +2752,6 @@ None.
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
 |PrePaymentDetails|see <b><a href="/#reference/data-object-definitions/prepayment-details">Pre Payment Details</a></b> object|`object`|||Required|
-|AlternateCurrencyDetails|see <b><a href="/#reference/data-object-definitions/other-currency-details/othercurrencydetails">Other Currency Details</a></b> object|`object`||||
 |BankDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
 |CounterpartyDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
 
@@ -4605,7 +4601,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 ## PayableOnPrePayment (object)
 + DocumentBody (required, DocumentDetails)
 + PrePaymentDetails (required, PrePaymentDetails)
-+ AlternateCurrencyDetails (OtherCcyPayDetails)
 + BankDetails (required, AccountPostingBankPayDetails)
 + CounterpartyDetails (required, CounterpartyDetails)
 
@@ -4616,7 +4611,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 ## PayableOnAccount (object)
 + DocumentBody (required, DocumentDetails)
 + BankDetails (required, AccountPostingBankPayDetails)
-+ CashCurrencyDetails (OtherCcyDetails)
 + TransactionsToMatch (required, array [OnAccountPayDetailsLess])
 + OtherCosts (array [AccountPostingPayDetailsLess])
 
@@ -4818,14 +4812,12 @@ The CommodityFullCode is a five part key made up of the following values seperat
 ## ReceivableOnAccount (object)
 + DocumentBody (required, DocumentDetails)
 + BankDetails (required, AccountPostingBankRecDetails)
-+ CashCurrencyDetails (OtherCcyRecDetails)
 + TransactionsToMatch (required, array [OnAccountRecDetailsLess])
 + OtherCosts (array [AccountPostingRecDetailsLess])
 
 ## ReceivableOnPrePayment (object)
 + DocumentBody (required, DocumentDetails)
 + PrePaymentDetails (required, PrePaymentDetails)
-+ AlternateCurrencyDetails (OtherCcyRecDetails)
 + BankDetails (required, AccountPostingBankRecDetails)
 + CounterpartyDetails (required, CounterpartyRecDetails)
 
