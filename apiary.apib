@@ -3813,17 +3813,6 @@ A multipurpose object used by several endpoints
 + Response 200 (application/json; charset=utf-8)
 + Attributes (OnAccountDetails)
 
-## Other Currency Details [/OtherCurrencyDetails]
-A multipurpose object used by several endpoints. 
-### OtherCurrencyDetails [GET]
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|OtherCurrencyCode|Other Currency Code|`string`|3||Required|
-|AmountInOtherCurrency|Amount In Other Currency|`decimal`|||Required|
-
-+ Response 200 (application/json; charset=utf-8)
-+ Attributes (OtherCcyDetails)
 
 ## PnL Currency [/PnLCurrency]
 A multipurpose object used by several endpoints
@@ -4573,18 +4562,6 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + TransactionKey: 00080888.P||GBP||20150832||20151003||14576460 (required, string)
 + DocumentReference: XX7654321 (required, string)
 + TransactionAmountInDocumentCurrency: 123.45 (required, number)
-
-## OtherCcyDetails (object)
-+ OtherCurrencyCode: USD (string)
-+ AmountInOtherCurrency: `-3200` (number)
-
-## OtherCcyPayDetails (object)
-+ OtherCurrencyCode: USD (string)
-+ AmountInOtherCurrency: `-3200` (number)
-
-## OtherCcyRecDetails (object)
-+ OtherCurrencyCode: USD (string)
-+ AmountInOtherCurrency: 3200 (number)
 
 ## PackingType (object)
 + PackingTypeId: 1050 (string)
