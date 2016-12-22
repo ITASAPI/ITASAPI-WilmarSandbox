@@ -1594,6 +1594,35 @@ WIP Ledger related reference data.
 Data Objects and endpoints providing access to account matching
 
 
+## Match Transactions [/Accounting/{TradingEntityId}/Matching/MatchTransactions]
+`PUT` Transactions to apply cash, invoice matching to.
+### Match Transactions [PUT]
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|TransactionsToMatch|see <b><a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a></b> object|[array] of `object`|||Required|
+
+
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
+
++ Request (application/json)
+    + Header
+
+            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
+
+    + Attributes (MatchTransactions)
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes (200 SuccessResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 Response)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
+
 ## Remove Match [/Accounting/{TradingEntityId}/Matching/RemoveMatch/{MatchFlag}]
 `PUT` Validates and removes all matched transactions using the nominated match flag.
 ### Remove Match [PUT]
@@ -1636,37 +1665,6 @@ None.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
-
-## Match Transactions [/Accounting/{TradingEntityId}/Matching/MatchTransactions]
-`PUT` Transactions to apply cash, invoice matching to.
-### Match Transactions [PUT]
-
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|TransactionsToMatch|see <b><a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a></b> object|[array] of `object`|||Required|
-
-
-+ Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity. 
-
-+ Request (application/json)
-    + Header
-
-            AccessToken: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1bmlxdWVfbmFtZSI6ImRlZXBhayIsInN1YiI6ImRlZXBhayIsInJvbGUiOlsiNzk5YjhhNDEtYWI0ZS00MTBhLWI5MTktYzU3ZWFlMmFlMDI5IiwiZGVlcGFrIiwiQVNQLk5FVCBJZGVudGl0eSIsIjViNDE4ODE2LTI3ZjQtNGRlOC1iNmMyLTJlZTcxNjI3ZmJmYyIsIkFkbWluIiwiU3VwZXJBZG1pbiJdLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMjciLCJhdWQiOiI4MjkzNjk0MjJmNzA0NTIzODUxZDk4NTU2YjZkNTQyYiIsImV4cCI6MTQ1OTQzMjk0MSwibmJmIjoxNDU5NDMxMTQxfQ.JgPGxt0Ok5baKx0YMXlO6D9kUYrCWM-Kma9b9iMW8tg
-
-    + Attributes (MatchTransactions)
-
-+ Response 200 (application/json; charset=utf-8)
-    + Attributes (200 SuccessResponse)
-
-+ Response 400 (application/json; charset=utf-8)
-    + Attributes (400 Response)
-
-+ Response 404 (application/json; charset=utf-8)
-    + Attributes (404 Response)
-
-+ Response 405 (application/json; charset=utf-8)
-    + Attributes (405 Response)
 
 
 ## Transactions Matched List [/Accounting/{TradingEntityId}/Matching/TransactionsMatched/{DocumentReference}]
