@@ -1593,11 +1593,11 @@ WIP Ledger related reference data.
     + Attributes (405 Response)
 
 # Group Accounting-Matching
-Data Objects and endpoints providing access to account matching
+Endpoints covering functionality around the match process within ITAS accounting including listing, creating and removing matching information.
 
 
 ## Match Transactions [/Accounting/{TradingEntityId}/Matching/MatchTransactions]
-`PUT` Transactions to apply cash, invoice matching to.
+`PUT` Request a series of client (posted) transactions to be matched. Normal ITAS accounting rules will be applied.
 ### Match Transactions [PUT]
 
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -1626,7 +1626,7 @@ Data Objects and endpoints providing access to account matching
 
 
 ## Remove Match [/Accounting/{TradingEntityId}/Matching/RemoveMatch/{MatchFlag}]
-`PUT` Validates and removes all matched transactions using the nominated match flag.
+`PUT` Request the removal of a specific Match Flag. This process is usually required prior to any attempt to reverse a document using the ReverseCashDocument endpoint.
 ### Remove Match [PUT]
 
 <b>URI Parameters</b>
@@ -1670,7 +1670,7 @@ None.
 
 
 ## Transactions Matched List [/Accounting/{TradingEntityId}/Matching/TransactionsMatched/{DocumentReference}]
-`GET` List Transactions linked by match flag found on the document reference provided
+`GET` Returns a list of matched client (posted) transactions associated with the document provided. This should be done as part of any reversal process/request to ensure the consequences of removing a match are understood. Multiple matches may be identified for a single document as client legs can be split, so please note that the response contains an array of match flags with associated transactions.
 ### List Transactions Matched [GET]
 
 <b>URI Parameters</b>
@@ -2547,7 +2547,7 @@ None.
     + Attributes (405 Response)
 
 ## PayableManual [/Finance/{TradingEntityId}/Cash/PayableManual]
-`POST` Allows 'simple' cash payments between multiple (general and/or client ledger) accounts.  
+`POST` Create 'simple' cash payments between multiple (general and/or client ledger) accounts.  
 ### Create PayableManual [POST]
 
 <b>Request Body</b>
