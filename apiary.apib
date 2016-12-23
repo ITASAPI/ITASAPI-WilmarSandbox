@@ -2499,7 +2499,7 @@ Endpoints covering an extensive range of functionality around creating, authoris
 
 
 ## AuthoriseForPosting [/Finance/{TradingEntityId}/Cash/AuthoriseForPosting/{DocumentReference}]
-`PUT` Authorise an entity to be added to the Posting process.
+`PUT` Mark an accounting document as Authorised to be posted.
 ### AuthoriseForPosting [PUT]
 
 
@@ -2547,7 +2547,7 @@ None.
     + Attributes (405 Response)
 
 ## PayableManual [/Finance/{TradingEntityId}/Cash/PayableManual]
-`POST` Allows generic cash payments to be created between multiple accounts  
+`POST` Allows 'simple' cash payments between multiple (general and/or client ledger) accounts.  
 ### Create PayableManual [POST]
 
 <b>Request Body</b>
@@ -2586,7 +2586,7 @@ None.
     + Attributes (405 Response)
 
 ## PayableOnAccount [/Finance/{TradingEntityId}/Cash/PayableOnAccount]
-`POST` Allows cash payments to be created on account of existing (posted) accounting documents (e.g. Purchase Invoices) 
+`POST` Create part/full cash payments against existing transactions (principally Purchase Invoices/Credit Notes).
 ### Create PayableOnAccount [POST]
 
 <b>Request Body</b>
@@ -2627,7 +2627,7 @@ None.
     + Attributes (405 Response)
 
 ## PayableOnPrePayment [/Finance/{TradingEntityId}/Cash/PayableOnPrePayment]
-`POST` Allows cash payments to be created against a prepayment invoice received from the counterparty
+`POST` Create part/full cash payments against exisiting Pre-Payment requests (invoices).
 ### Create PayableOnPrePayment [POST]
 
 <b>Request Body</b>
@@ -2666,7 +2666,7 @@ None.
 
 
 ## ReceivableManual [/Finance/{TradingEntityId}/Cash/ReceivableManual]
-`POST` Allows generic cash receipts to be created between multiple accounts  
+`POST` Create 'simple' cash receipts between multiple (General and/or Client Ledger) accounts.  
 ### Create ReceivableManual [POST]
 
 <b>Request Body</b>
@@ -2705,7 +2705,7 @@ None.
     + Attributes (405 Response)
 
 ## ReceivableOnAccount [/Finance/{TradingEntityId}/Cash/ReceivableOnAccount]
-`POST` Allows cash receipts to be created on account of existing (posted) accounting documents (e.g. Sales Invoices) 
+`POST` Create part/full cash receipts against transactions (principally Sales Invoices/Debit Notes). 
 ### Create ReceivableOnAccount [POST]
 
 <b>Request Body</b>
@@ -2746,7 +2746,7 @@ None.
     + Attributes (405 Response)
 
 ## ReceivableOnPrePayment [/Finance/{TradingEntityId}/Cash/ReceivableOnPrePayment]
-`POST` Allows cash receipts to be created against a prepayment invoice sent to the counterparty
+`POST` Create part/full cash receipts against exisiting Pre-Payment requests (invoices).
 ### Create ReceivableOnPrePayment [POST]
 
 <b>Request Body</b>
@@ -2785,7 +2785,7 @@ None.
 
 
 ## ReverseCashDocument [/Finance/{TradingEntityId}/Cash/ReverseCashDocument/{DocumentReference}]
-`POST` Validates and performs a full cash reverse on nominated document.
+`POST` Request a cash (accounting) document be fully reversed.
 ### Create ReverseCashDocument [POST]
 
 <b>URI Parameters</b>
