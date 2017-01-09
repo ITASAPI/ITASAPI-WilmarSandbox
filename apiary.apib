@@ -1602,7 +1602,7 @@ Endpoints covering functionality around the match process within ITAS accounting
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|TransactionsMatched|see <b><a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a></b> object|[array] of `object`|||Required|
+|TransactionsToMatch|see <b><a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a></b> object|[array] of `object`|||Required|
 
 
 + Parameters
@@ -1683,7 +1683,7 @@ None.
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |MatchFlag|Match Flag|`string`|3||Required|
-|TransactionsToMatch|see <b><a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a></b> object|[array] of `object`|||Required|
+|TransactionsMatched|see <b><a href="/#reference/data-object-definitions/onaccountdetails/onaccountdetails">On Account Details</a></b> object|[array] of `object`|||Required|
 
 
 + Parameters
@@ -4516,7 +4516,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + TradingEntityList (array [MasterDataTradingEntityId])
 
 ## MatchTransactions (object)
-+ TransactionsMatched (required, array [OnAccountDetailsMatched, OnAccountDetailsMatches])
++ TransactionsToMatch (required, array [OnAccountDetailsMatched, OnAccountDetailsMatches])
 
 ## NominalAccount (object)
 + NominalAccountId: 1234.5678 (required, string)  
