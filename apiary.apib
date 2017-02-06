@@ -2634,9 +2634,8 @@ None.
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
-|PrePaymentDetails|see <b><a href="/#reference/data-object-definitions/prepayment-details">Pre Payment Details</a></b> object|`object`||||
-|BankDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
-|CounterpartyDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
+|PrePaymentDetails|see <b><a href="/#reference/data-object-definitions/prepayment-details">Pre Payment Details</a></b> object|`object`|||Required|
+|AccountDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|[array] of `object`|||Required|
 
 <b>Response Data</b>
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -2663,6 +2662,7 @@ None.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
+
 
 
 ## ReceivableManual [/Finance/{TradingEntityId}/Cash/ReceivableManual]
@@ -2745,6 +2745,7 @@ None.
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 Response)
 
+
 ## ReceivableOnPrePayment [/Finance/{TradingEntityId}/Cash/ReceivableOnPrePayment]
 `POST` Create part/full cash receipts against exisiting Pre-Payment requests (invoices).
 ### Create ReceivableOnPrePayment [POST]
@@ -2754,8 +2755,7 @@ None.
 |--------|-----------|----|----------|-----|----------|
 |DocumentBody|see <b><a href="/#reference/data-object-definitions/documentdetails/documentdetails">Document Details</a></b> object|`object`|||Required|
 |PrePaymentDetails|see <b><a href="/#reference/data-object-definitions/prepayment-details">Pre Payment Details</a></b> object|`object`|||Required|
-|BankDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
-|CounterpartyDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|`object`|||Required|
+|AccountDetails|see <b><a href="/#reference/data-object-definitions/accountpostingdetails/accountpostingdetails">Account Posting Details</a></b> object|[array] of `object`|||Required|
 
 <b>Response Data</b>
 |Property|Description|Type|Max Length|Notes|Constraint|
@@ -2782,7 +2782,6 @@ None.
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
-
 
 ## ReverseCashDocument [/Finance/{TradingEntityId}/Cash/ReverseCashDocument/{DocumentReference}]
 `POST` Request a cash (accounting) document be fully reversed.
@@ -3851,7 +3850,8 @@ A multipurpose object used by several endpoints
 
 |Property|Description|Type|Max Length|Notes|Constraint|
 |--------|-----------|----|----------|-----|----------|
-|InstructionReference|Instruction Reference|`string`|||Required|
+|InstructionReference|Instruction Reference|`string`|9||Required|
+|ContractReference|Contract Reference|`string`|10|||
 
 + Response 200 (application/json; charset=utf-8)
 + Attributes (PrePaymentDetails)
@@ -4591,8 +4591,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 ## PayableOnPrePayment (object)
 + DocumentBody (required, DocumentDetails)
 + PrePaymentDetails (required, PrePaymentDetails)
-+ BankDetails (required, AccountPostingBankPayDetails)
-+ CounterpartyDetails (required, CounterpartyDetails)
++ AccountDetails (required, array [AccountPostingBankPayDetails, AccountPostingRecDetails])
 
 ## PayableManual (object)
 + DocumentBody (required, DocumentDetails)
@@ -4793,7 +4792,8 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + PreMatchDocumentReference: CP1503236 (string)
 
 ## PrePaymentDetails (object)
-+ InstructionReference: REF123 (string)
++ InstructionReference: XX123456 (string)
++ ContractReference: S01234.000 (string)
 
 ## ReceivableManual (object)
 + DocumentBody (required, DocumentDetails)
@@ -4808,8 +4808,7 @@ The CommodityFullCode is a five part key made up of the following values seperat
 ## ReceivableOnPrePayment (object)
 + DocumentBody (required, DocumentDetails)
 + PrePaymentDetails (required, PrePaymentDetails)
-+ BankDetails (required, AccountPostingBankRecDetails)
-+ CounterpartyDetails (required, CounterpartyRecDetails)
++ AccountDetails (required, array [AccountPostingBankRecDetails, AccountPostingPayDetails])
 
 ## ResultsMessage (object)
 + RequestId: 10001 (string)
