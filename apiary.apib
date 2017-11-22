@@ -3926,6 +3926,71 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + Response 200 (application/json; charset=utf-8)
 + Attributes (CommodityFullCode)
 
+# Group Base Entities
+Fully mapped tables
+
+## dhl21 Table
+
+### Unposted Transaction Head Base
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|DocumentReference|Transaction Document Reference|`string`|9||Required|
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.  
+    + DocumentReference (required, string, `CN1600001`) ... Code for unposted transaction to read.
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (UnPostedTransactionHeadBase)
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 BadReadResponse)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 Response)
+
+## dhlxx Table
+
+### Unposted Transaction Leg Base
+
+|Property|Description|Type|Max Length|Notes|Constraint|
+|--------|-----------|----|----------|-----|----------|
+|DocumentReference|Transaction Document Reference|`string`|9||Required|
+
++ Request
+    [AccessToken][]
+    
++ Parameters
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.  
+    + DocumentReference (required, string, `CN1600001`) ... Code for unposted transaction to read.
+
++ Response 200 (application/json; charset=utf-8)
+    + Attributes 
+        + Data (UnPostedTransactionLegBase)
+        + Pagination (Pagination)
+        + Response (200 SuccessResponse)
+
++ Response 400 (application/json; charset=utf-8)
+    + Attributes (400 BadReadResponse)
+
++ Response 404 (application/json; charset=utf-8)
+    + Attributes (404 Response)
+
++ Response 405 (application/json; charset=utf-8)
+    + Attributes (405 Response)
+
+
+
 
 # Data Structures
 
@@ -5069,6 +5134,48 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + OptionType: C (string)
 + CommodityReference: reference info (string)
 
+## UnPostedTransactionHeadBase (object)
++ DocumentReference: CN1600001 (string)
++ DocumentDate: `2015-07-01T00:00:00Z` (string)
++ ValueDate: `2015-07-31T00:00:00Z` (string)
++ RateOfExchangeApplied: 20.12 (number)
++ RateOfExchangeType: M (string)
++ PaymentTerm (PaymentTerm)
++ VatRate (VATRate)
++ VatTurnover: 11.1 (number)
++ ClientReference: abc123 (string)
++ Narrative: Reversal of SI1501924 (string)
++ MarketReference: 123abc (string)
++ PromptMonth: `2015-08-01T00:00:00Z` (string)
++ OptionType: C (string)
++ CommodityReference: reference info (string)
+
+## UnPostedTransactionLegBase
++ DocumentReference: CN1600001 (string)
++ AccountLedgerType: C (string)
++ DocumentDate: `2015-07-01T00:00:00Z` (string)
++ ValueDate: `2015-07-31T00:00:00Z` (string)
++ Account  (AccountHeader)
++ DocumentCurrency  (Currency)
++ AmountInDocumentCurrency: 28607.34 (number)
++ FunctionalCurrency  (Currency)
++ AmountInFunctionalCurrency: 8607.34 (number)
++ AmountInLocalCurrency: 607.34 (number)
++ RateOfExchangeApplied: 20.12 (number)
++ RateOfExchangeType: M (string)
++ WeightInQtyCode: 11629.00 (number)
++ ContractReference: SC00338 (string)
++ Expense (Expense List)
++ Department (Department)
++ PaymentTerm (PaymentTerm)
++ VatRate (VATRate)
++ VatTurnover: 11.1 (number)
++ ClientReference: abc123 (string)
++ Narrative: Reversal of SI1501924 (string)
++ MarketReference: 123abc (string)
++ PromptMonth: `2015-08-01T00:00:00Z` (string)
++ OptionType: C (string)
++ CommodityReference: reference info (string)
 
 ## UserAccount (object)
 + UserAccountId: JS (string)
