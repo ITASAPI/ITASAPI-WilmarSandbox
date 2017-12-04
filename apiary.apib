@@ -3930,28 +3930,27 @@ The CommodityFullCode is a five part key made up of the following values seperat
 # Group Base Entities
 Fully mapped tables
 
-## dhl21 Table [/BaseEntity/{TradingEntityId}/dhl21/UnPostedTransHead/{DocumentReference}]
+## dhl21 Table [/BaseEntity/{TradingEntityId}/dhl21/UnPostedTransHead/{Property}/{PropertyValue}]
 
-### Read Unposted Transaction Head Base [GET]
+### List Unposted Transaction Head Base [GET]
 
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|DocumentReference|Transaction Document Reference|`string`|9||Required|
 
 + Request
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.  
-    + DocumentReference (required, string, `CN1600001`) ... Code for unposted transaction to read.
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
+    + Property (optional, enum[string]) ... identify property name to filter by 
+    + PropertyValue (optional, string, ``)
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data (UnPostedTransactionHeadBase)
+        + Data (array[UnPostedTransactionHeadBase])
+        + Pagination (Pagination)
         + Response (200 SuccessResponse)
 
 + Response 400 (application/json; charset=utf-8)
-    + Attributes (400 BadReadResponse)
+    + Attributes (400 BadPropertyResponse)
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
