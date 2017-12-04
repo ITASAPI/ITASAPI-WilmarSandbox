@@ -3958,28 +3958,27 @@ Fully mapped tables
 + Response 405 (application/json; charset=utf-8)
     + Attributes (405 Response)
 
-## dhlxx Table [/BaseEntity/{TradingEntityId}/dhlxx/UnPostedTransLeg/{DocumentReference}]
+## dhlxx Table [/BaseEntity/{TradingEntityId}/dhlxx/UnPostedTransLeg/{Property}/{PropertyValue}]
 
-### Read Unposted Transaction Leg Base [GET]
+### List Unposted Transaction Leg Base [GET]
 
-|Property|Description|Type|Max Length|Notes|Constraint|
-|--------|-----------|----|----------|-----|----------|
-|DocumentReference|Transaction Document Reference|`string`|9||Required|
 
 + Request
     [AccessToken][]
     
 + Parameters
-    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.  
-    + DocumentReference (required, string, `CN1600001`) ... Code for unposted transaction to read.
+    + TradingEntityId (required, string, `JT`) ... Identify specific trading entity.
+    + Property (optional, string `DocumentReference`) ... Identify property name to filter by. 
+    + PropertyValue (optional, string, `CN1600001`) ... Identify property value to filter by. 
 
 + Response 200 (application/json; charset=utf-8)
     + Attributes 
-        + Data (UnPostedTransactionLegBase)
+        + Data (array[UnPostedTransactionHeadBase])
+        + Pagination (Pagination)
         + Response (200 SuccessResponse)
 
 + Response 400 (application/json; charset=utf-8)
-    + Attributes (400 BadReadResponse)
+    + Attributes (400 BadPropertyResponse)
 
 + Response 404 (application/json; charset=utf-8)
     + Attributes (404 Response)
