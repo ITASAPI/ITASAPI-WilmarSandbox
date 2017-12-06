@@ -28,7 +28,7 @@ HOST: http://polls.apiblueprint.org/
 <li>Finance-Cash<strong> Create PayableManual</strong>: Additional Optional Properties added to <b>DocumentDetails</b> Object and <b>AccountPostingDetails</b> Object<a href="/#reference/finance-cash/payablemanual"> Link</a></li>
 <li>Finance-Cash<strong> Create PayableOnAccount</strong>: Additional Optional Properties added to <b>DocumentDetails</b> Object, <b>OnAccountDetails</b> Object and <b>AccountPostingDetails</b> Object<a href="/#reference/finance-cash/payableonaccount"> Link</a></li>
 <li>Finance-Cash<strong> Create ReceivableManual</strong>: Additional Optional Properties added to <b>DocumentDetails</b> Object and <b>AccountPostingDetails</b> Object<a href="/#reference/finance-cash/receivablemanual"> Link</a></li>
-<li>Finance-Cash<strong> Create ReceivableOnAccount</strong>: Additional Optional Properties added to <b>DocumentDetails</b> Object, <b>OnAccountDetails</b> Object and Account Posting Details Object<a href="https://help.apiary.io/api_101/api_blueprint_tutorial/"> Link</a></li>
+<li>Finance-Cash<strong> Create ReceivableOnAccount</strong>: Additional Optional Properties added to <b>DocumentDetails</b> Object, <b>OnAccountDetails</b> Object and Account Posting Details Object<a href="/#reference/finance-cash/receivableonaccount"> Link</a></li>
 </ul>
 <chandiv>** ends ** </div>
 
@@ -3927,12 +3927,10 @@ The CommodityFullCode is a five part key made up of the following values seperat
 + Attributes (CommodityFullCode)
 
 
-# Base Entities
+# Group Base Entities
 Fully mapped tables
 
-# Group Extra Tree
-
-## dhl21 Table [/BaseEntity/{TradingEntityId}/dhl21/UnPostedTransHead/{Property}/{PropertyValue}]
+## Unposted Transaction Head (dhl21) [/BaseEntity/{TradingEntityId}/dhl21/UnPostedTransHead/{Property}/{PropertyValue}]
 
 ### List Unposted Transaction Head Base [GET]
 
@@ -3961,9 +3959,7 @@ Fully mapped tables
     + Attributes (405 Response)
 
 
-# Group Extra tree 2
-
-## dhlxx Table [/BaseEntity/{TradingEntityId}/dhlxx/UnPostedTransLeg/{Property}/{PropertyValue}]
+## Unposted Transaction Leg (dhlxx) [/BaseEntity/{TradingEntityId}/dhlxx/UnPostedTransLeg/{Property}/{PropertyValue}]
 
 ### List Unposted Transaction Leg Base [GET]
 
